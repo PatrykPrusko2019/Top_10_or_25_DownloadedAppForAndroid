@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <item
+        android:id="@+id/top10FreeApps"
+        android:title="@string/TopFreeApps" />
+    <item
+        android:id="@+id/topPaidApps"
+        android:title="@string/TopPaidApps" />
+    <item
+        android:id="@+id/topSongs"
+        android:title="@string/TopSongs" />
+
+    <group android:id="@+id/choiceLimit"
+           android:checkableBehavior="single">
+        <item
+            android:id="@+id/limitTop10Apps"
+            android:title="@string/limitTop10Apps" />
+        <item
+            android:id="@+id/limitTop25Apps"
+            android:title="@string/limitTop25Apps" />
+
+    </group>
+</menu>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Top_10_or_25_Downloaded</string>
+    <string name="listXML"></string>
+    <string name="name"> name </string>
+    <string name="artist">artist</string>
+    <string name="releaseDate">releaseDate</string>
+    <string name="summary">summary</string>
+    <string name="limitTop25Apps">Top 25</string>
+    <string name="TopFreeApps">Top Free Apps</string>
+    <string name="TopPaidApps">Top Paid Apps</string>
+    <string name="TopSongs">Top Songs</string>
+    <string name="limitTop10Apps">Top 10</string>
+</resources>
