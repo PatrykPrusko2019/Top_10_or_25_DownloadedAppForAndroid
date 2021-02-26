@@ -28,6 +28,7 @@ When sharing photo data from a URL, you can use the Picasso library:
 1.use code in the FeedAdapter class:
 
   Picasso.with (convertView.getContext ()). Load (record_feed.getImage ()). Into (tvImage);
+
 2.in a comment give:
 
   LoadImage loadImage = new LoadImage (tvImage);
