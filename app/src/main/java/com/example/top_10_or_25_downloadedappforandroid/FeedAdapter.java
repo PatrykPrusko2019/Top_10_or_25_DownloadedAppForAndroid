@@ -11,9 +11,6 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
-import androidx.annotation.Nullable;
-
 import com.squareup.picasso.Picasso;
 
 import java.io.IOException;
@@ -24,21 +21,24 @@ import java.util.List;
 
 public class FeedAdapter extends ArrayAdapter {
 
+    private final int layoutResource;
+    private List<EntryFeed> applications; //application data list
 
-    public FeedAdapter(@NonNull Context context, int resource, @NonNull List listOfReeds_Rss) {
+    public FeedAdapter(Context context, int resource, List listOfReeds_Rss) {
         super(context, resource, listOfReeds_Rss);
+        this.layoutResource = resource;
+        this.applications = listOfReeds_Rss;
     }
 
 
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    public View getView(int position, View convertView, ViewGroup parent) {
 
-       EntryFeed record_feed = (EntryFeed) getItem(position);
+        EntryFeed record_feed = applications.get(position);
 
-       if( convertView == null ) {
-           convertView = LayoutInflater.from(getContext()).inflate(R.layout.record_feed, parent, false);
-       }
+        if( convertView == null ) {
+            convertView = LayoutInflater.from(getContext()).inflate(layoutResource, parent, false); // R.layout.record_feed -> layoutResource
+        }
 
         TextView tvName = (TextView) convertView.findViewById(R.id.name);
         TextView tvArtist = (TextView) convertView.findViewById(R.id.artist);
@@ -54,9 +54,9 @@ public class FeedAdapter extends ArrayAdapter {
         LoadImage loadImage = new LoadImage(tvImage); // adds displaying of Images using class LoadImage
         loadImage.execute(record_feed.getImage()); // adds photos from url link
 
-          // or use library Picasso for displaying of images
+        // or use library Picasso for displaying of images
 
-       // Picasso.with(convertView.getContext()).load(record_feed.getImage()).into(tvImage); // adds displaying of Images using Picasso Library
+        // Picasso.with(convertView.getContext()).load(record_feed.getImage()).into(tvImage); // adds displaying of Images using Picasso Library
 
 
         return convertView;
