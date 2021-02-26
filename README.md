@@ -24,6 +24,7 @@ The releaseDate variable is formatted to be better displayed.
 Additionally, the application works when user selects the same choice again, the application does not download this data again.
 
 When sharing photo data from a URL, you can use the Picasso library:
+
 1.use code in the FeedAdapter class:
 
   Picasso.with (convertView.getContext ()). Load (record_feed.getImage ()). Into (tvImage);
